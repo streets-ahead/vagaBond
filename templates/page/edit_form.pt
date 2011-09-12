@@ -1,0 +1,20 @@
+<div id='main'>
+	<form action='/page' method='post'>
+		
+			<div>
+				title <input type='TEXT' name='title'/>
+			</div>
+		
+			<div>
+				body <input type='TEXT' name='body'/>
+			</div>
+		
+			<div>
+				seoUrl <input type='TEXT' name='seoUrl'/>
+			</div>
+		
+		
+		<input type='SUBMIT' value='Submit'/>
+	</form>
+</div>
+

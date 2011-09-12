@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<%=html.createTitle(data.title)%>
+	
+	<!-- include jQuery because it is awesome -->
+	<%=html.createScript('http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js')%>
+
+	<!-- include main stylesheet -->
+	<link rel="stylesheet/less" type="text/css" href="<%=getBaseURL()%>css/styles.less" />
+	<%=html.createScript('client_scripts/less-1.1.3.min.js')%>
+	<!--[if lt IE 9]><script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+
+	<header id='top'>
+		<h1>vagaBond</h1>
+	</header>
+	<article>
+ 
+		<div class='container'>
+	    	{$#innerTemplate}
+	    </div>
+ 	</article>
+
+</body>
+</html>

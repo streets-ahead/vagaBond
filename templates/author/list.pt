@@ -1,0 +1,47 @@
+<div id='main'>
+	<% for (var i=0; i<data.author.length; i++) { %>
+		
+			<div>
+				<span><b>fullname</b></span>
+				<div>
+					<%= data.author[i].fullname %>
+				</div>
+			</div>
+		
+			<div>
+				<span><b>username</b></span>
+				<div>
+					<%= data.author[i].username %>
+				</div>
+			</div>
+		
+			<div>
+				<span><b>password</b></span>
+				<div>
+					<%= data.author[i].password %>
+				</div>
+			</div>
+		
+			<div>
+				<span><b>email</b></span>
+				<div>
+					<%= data.author[i].email %>
+				</div>
+			</div>
+		
+			<div>
+				<span><b>twitter</b></span>
+				<div>
+					<%= data.author[i].twitter %>
+				</div>
+			</div>
+		
+			<div>
+				<span><b>bio</b></span>
+				<div>
+					<%= data.author[i].bio %>
+				</div>
+			</div>
+		
+	<% } %>
+</div>

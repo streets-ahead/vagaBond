@@ -1,0 +1,20 @@
+<div id='main'>
+	
+		<h3><%=data.article[0].title%></h3>
+		<a href='/article/edit/_id/<%=data.article[0]._id%>'>Edit</a>
+		<h5><%=data.article[0].author%><span><%=data.article[0].publishDate.toDateString()%></span></h5>
+	
+		<div>
+			<p>
+				<%= markdown.parse(data.article[0].body) %>
+			<p>
+		</div>
+	
+		
+		<div>
+			<span><b>Tags:</b></span>
+			<div>
+				<%= data.article[0].tags %>
+			</div>
+		</div>
+</div>

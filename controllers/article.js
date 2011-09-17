@@ -38,7 +38,7 @@ article.prototype.get_get = function(urlParts, query){
 	this.article.find(search, function(res){
 		var data = {}
 		if(!res || res.length ==0){
-			that.show404();
+			that.showNotFound();
 		}else{
 			data.article = res;
 			if(res.length == 1){

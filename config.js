@@ -2,6 +2,7 @@ module.exports = {
 	"baseURL" : "http://localhost",
 	"port" : 8888,
 	"defaultRenderer" : "html",
+	"defaultController" : "page",
 	"routeMaps" : [
 		{
 		 	"path" : "/",
@@ -21,14 +22,14 @@ module.exports = {
 		"xml" : "application/xml"
 	},
 	"preControllerHooks" : [
-		// "authenticate"
+		"authenticate"
 	],
 	"postControllerHooks" : [
 	],
 	"secureRoutes":[
 		{
-			//"route" : "/article/new",
-			//"methods" : ['get']
+			"route" : "/article/new",
+			"methods" : ['get','post'] //NOTE: for now always make lowercase.
 		}
 	],
 	"databaseName" : "vagaBond",

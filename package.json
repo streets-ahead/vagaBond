@@ -13,7 +13,8 @@
 	},
 	"keywords": [""],
 	"dependencies": {
-		"lazyBum" : ">= 0.2.0"
+		"lazyBum" : ">= 0.2.0",
+		"base64" : ">=2.0.3"
 	},
 	"directories": {
 		"controllers" : "./controllers",

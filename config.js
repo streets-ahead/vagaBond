@@ -30,6 +30,26 @@ module.exports = {
 		{
 			"route" : "/article/new",
 			"methods" : ['get','post'] //NOTE: for now always make lowercase.
+		},
+		{
+			"route" : "/article/edit",
+			"methods" : ['get', 'post']
+		},
+		{
+			"route" : "/page/new",
+			"methods" : ['get', 'post']
+		},
+		{
+			"route" : "/page/edit",
+			"methods" : ['get', 'post']
+		},
+		{
+			"route" : "/author/new",
+			"methods" : ['get', 'post']
+		},
+		{
+			"route" : "/author/edit",
+			"methods" : ['get', 'post']
 		}
 	],
 	"databaseName" : "vagaBond",

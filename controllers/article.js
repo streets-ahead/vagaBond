@@ -142,6 +142,10 @@ var createArray = function(str){
   if(!str || str.length<1){
     return []
   }else{
-    return str.split(',');
+    array = str.split(',');
+    for(var i in array){
+    	array[i] = array[i].trim();
+    }
+    return array
   }
 }

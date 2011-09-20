@@ -28,18 +28,31 @@ author.prototype.edit_get = function(urlParts, query){
   this.writeResponse(data, 'index')
 }
 
+
 author.prototype.edit_post = function(urlParts, query, postData){
 	var that = this;
 	var binding = this.bindInput(this.author, postData);
 	if(binding.valid){
 		binding.object.save(function(results, errors){
 			if(errors){
-				that.rePostWithErrors(postData, errors)
+				var data = {
+					errors: errors,
+					author: postData,
+					title: 'New Author | vagaBond',
+					innerTemplate: 'author/edit_form'
+				}
+				that.writeResponse(data, 'index')
 			}else{
 				that.edit_get([], null)
 			}
 		});
 	}else{
-		rePostWithErrors(postData, binding.object)
+		var data = {
+			errors: binding.object,
+			author: postData,
+			title: 'New Author | vagaBond',
+			innerTemplate: 'author/edit_form'
+		}
+		that.writeResponse(data, 'index')
 	}
 }

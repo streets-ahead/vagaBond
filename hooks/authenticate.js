@@ -7,6 +7,7 @@ var authenticate = {
   helpers: ['config'],
 
   run: function() {
+  		var that = this;
 		var url = this.reqData.request.url
 		var method = this.reqData.request.method
 		var config = this.config.getConfig();
@@ -31,7 +32,7 @@ var authenticate = {
 						that.reqData['auth_status'] = { user: userpass[0], authenticated: true}
 						that.hookComplete();
 						}else{
-						 this.sendAusendAuthorizationRequired();
+						 that.sendAuthorizationRequired();
 						}
 					})
 

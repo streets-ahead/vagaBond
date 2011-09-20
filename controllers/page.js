@@ -9,14 +9,23 @@ var page = Controller.extend(function() {
 
 module.exports = page;
 
-page.prototype.index_get = function(urlParts, query) {
+page.prototype.helpers=['html']
+page.prototype.collections = ['page']
 
-	log.error("ROUTED TO PAGE: " + urlParts.length);
+page.prototype.index_get = function(urlParts, query) {
 	
 };
 
 page.prototype.index_post = function(urlParts, query, postData) {
 	
 };
+
+page.prototype.new_get = function(urlParts, query){
+	var data = {
+		innerTemplate: 'page/edit_form',
+		title: 'Create New Page | vagaBond'
+	}
+	this.writeResponse(data, 'index')
+}
 
 

@@ -98,7 +98,15 @@ article.prototype.new_post = function(urlParts, query, postData){
 			
 	    });
 	  }else{
-	    this.redirect("/article/edit");
+	  	var data = {
+	  		article: postData,
+	  		isNew: true,
+	  		errors: binding.object,
+	  		title: 'New Article | vagaBond',
+	  		innerTemplate: 'article/edit_form'
+	  	}
+	  	that.writeResponse(data, 'index')
+	    // this.redirect("/article/edit");
 	  }
 }
 
@@ -131,8 +139,19 @@ article.prototype.edit_post = function(urlParts, query, postData){
 				persisted[attr] = postData[attr]
 			}
 		}
-		persisted.save(function(results){
-			that.redirect('/article/' + persisted.seoUrl)
+		persisted.save(function(results, errors){
+			if(results){
+				that.redirect('/article/' + persisted.seoUrl)
+			}else{
+				var data = {
+					article: postData,
+					isNew: false,
+					errors: errors,
+					title: 'Edit Article | vagaBond',
+					innerTemplate: 'article/edit_form'
+				}
+				that.writeResponse(data,'index')
+			}
 		})
 	});
 

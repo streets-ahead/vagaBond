@@ -6,7 +6,7 @@
 			</div>
 		<% } %>
 	<% } %>
-	<form action='/page' method='post'>
+	<form action='/page/new' method='post'>
 		<fieldset>
 			<legend>Create New Web Page</legend>
 			<div class='clearfix'>

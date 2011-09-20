@@ -1,24 +1,11 @@
 <div id='main'>
 	
-		<div>
-			<span><b>title</b></span>
-			<div>
-				<%= data.page.title %>
-			</div>
-		</div>
+		<h3><%=data.page.title%></h3>
 	
 		<div>
-			<span><b>body</b></span>
-			<div>
-				<%= data.page.body %>
-			</div>
-		</div>
-	
-		<div>
-			<span><b>seoUrl</b></span>
-			<div>
-				<%= data.page.seoUrl %>
-			</div>
+			<p>
+				<%= markdown.parse(data.page.body) %>
+			<p>
 		</div>
 	
 </div>

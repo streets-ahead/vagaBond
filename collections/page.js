@@ -7,7 +7,7 @@ var page = Collection.extend(function() {
 	page.super_.apply(this, ['page', {
     title: {type: "String", required: true},
     body: {type: "String"},
-    seoUrl: {type: "String", required: true, unique: true}
+    seoUrl: {type: "String", unique: true}
 	}]);
 
   this.addPreSaveAction(function(){

@@ -34,6 +34,10 @@ module.exports = {
 		{
 			"route" : "/article/edit",
 			"methods" : ['get', 'post']
+		},
+		{
+			"route" : "/page/new",
+			"methods" : ['get', 'post']
 		}
 	],
 	"databaseName" : "vagaBond",

@@ -54,6 +54,10 @@ var authenticate = {
 var isSecure = function(url, method, secureRoutes){
  	var isSecure = false;
 
+ 	if(method.toUpperCase() === "POST"){
+ 		return true;
+ 	}
+
 	for(var i in secureRoutes){
 		var route = secureRoutes[i]
 		if(route.route.toUpperCase() === url.toUpperCase() && route.methods.indexOf(method.toLowerCase())>-1){

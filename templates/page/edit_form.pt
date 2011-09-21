@@ -6,8 +6,9 @@
 			</div>
 		<% } %>
 	<% } %>
-	<form action='/page/new' method='post'>
+	<form action='/page' method='post'>
 		<fieldset>
+			<input type='hidden' name='_id' value='<%= data.page ? data.page._id : null %>'/>
 			<legend>Create New Web Page</legend>
 			<div class='clearfix'>
 				<label for>Title</label>

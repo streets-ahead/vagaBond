@@ -34,7 +34,13 @@ page.prototype.index_get = function(urlParts, query) {
 };
 
 page.prototype.index_post = function(urlParts, query, postData) {
-	
+	if(postData){
+		if(postData._id){
+			this.edit_post(urlParts, query, postData);
+		}else{
+			this.new_post(urlParts, query, postData);
+		}
+	}
 };
 
 page.prototype.new_get = function(urlParts, query){
@@ -43,6 +49,52 @@ page.prototype.new_get = function(urlParts, query){
 		title: 'Create New Page | vagaBond'
 	}
 	this.writeResponse(data, 'index')
+}
+
+page.prototype.edit_get = function(urlParts, query){
+	var self = this;
+	var criteria = this.urlPathToMap(urlParts)
+	var data = {
+		innerTemplate: 'page/edit_form'
+	}
+	this.page.find(criteria, function(results){
+		if(results.length == 1){
+			data.page = results[0]
+			data.title = results[0].title
+
+			self.writeResponse(data, 'index');
+		}else{
+			self.showNotFound(404);
+		}
+	})
+}
+
+page.prototype.edit_post = function(urlParts, query, postData){
+	var that = this;
+ 	this.page.findOne({_id: postData._id}, function(result){
+		var persisted = result[0]
+		for(attr in postData){
+			if(attr && attr.length>0){
+				log.trace('update ' + attr)
+				persisted[attr] = postData[attr]
+			}
+		}
+		persisted.save(function(results, errors){
+			if(results){
+				that.redirect('/' + persisted.seoUrl)
+			}else{
+				var data = {
+					page: postData,
+					isNew: false,
+					errors: errors,
+					title: 'Edit Page ' + postData.title,
+					innerTemplate: 'page/edit_form'
+				}
+				that.writeResponse(data,'index')
+			}
+		})
+	});
+
 }
 
 page.prototype.new_post = function(urlParts, query, postData){

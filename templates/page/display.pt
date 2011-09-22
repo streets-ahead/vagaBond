@@ -3,9 +3,11 @@
 		<h3><%=data.page.title%></h3>
 	
 		<div>
-			<p>
+			<% if(data.page.isMD){ %>
 				<%= markdown.parse(data.page.body) %>
-			<p>
+			<% }else{ %>
+				<%= data.page.body %>
+			<% } %>
 		</div>
 	
 </div>

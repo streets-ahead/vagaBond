@@ -72,16 +72,15 @@ page.prototype.edit_get = function(urlParts, query){
 page.prototype.edit_post = function(urlParts, query, postData){
 	var that = this;
  	this.page.findOne({_id: postData._id}, function(result){
-		var persisted = result[0]
 		for(attr in postData){
 			if(attr && attr.length>0){
 				log.trace('update ' + attr)
-				persisted[attr] = postData[attr]
+				result[attr] = postData[attr]
 			}
 		}
-		persisted.save(function(results, errors){
+		result.save(function(results, errors){
 			if(results){
-				that.redirect('/' + persisted.seoUrl)
+				that.redirect('/' + result.seoUrl)
 			}else{
 				var data = {
 					page: postData,

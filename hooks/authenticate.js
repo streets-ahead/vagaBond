@@ -24,6 +24,11 @@ var authenticate = {
 					var hash = crypto.createHash('sha512')
 					hash.update(userpass[1]) //hash password
 					var pwd = hash.digest('base64')
+					
+					if(config.adminUsername === userpass[0] && config.adminPassword === userpass[1]) {
+						this.hookComplete();
+						return;
+					}
 
 					var that = this;
 					this.author.find({username: userpass[0], password: pwd}, function(results){
@@ -54,17 +59,20 @@ var authenticate = {
 var isSecure = function(url, method, secureRoutes){
  	var isSecure = false;
 
- 	if(method.toUpperCase() === "POST"){
- 		return true;
- 	}
-
 	for(var i in secureRoutes){
 		var route = secureRoutes[i]
-		if(route.route.toUpperCase() === url.toUpperCase() && route.methods.indexOf(method.toLowerCase())>-1){
-	  		return true;
+		var secureMethod = false;
+		if(route.methods === '*') {
+			secureMethod = true;
+		} else if(route.methods.indexOf(method.toLowerCase()) >- 1) {
+			secureMethod = true;
 		}
+		if(url.match(route) !== null && secureMethod){
+			console.log('SECURE ROUTE');
+	  		return true;
+		} 
   	}
-
+	console.log('SECURE ROUTE ' + isSecure);
   	return isSecure;
 }
 

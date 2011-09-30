@@ -16,18 +16,16 @@ page.prototype.index_get = function(urlParts, query) {
 	var that = this;
 	if(urlParts.length == 1){
 		var seo = urlParts[0]
-		this.page.find({seoUrl: seo}, function(results, errors){
-			if(!results && results.length!=1){
-				that.showNotFound(404);
-			}else{
-				var data = {
-					page: results[0],
-					innerTemplate: 'page/display',
-					title: results[0].title
-				}
-				that.writeResponse(data, 'index')
-			}
-		})
+    this.page.findOne({seoUrl: seo}, function(result){
+      if(result){
+        var data = {
+          page: result,
+          innerTemplate: 'page/display',
+          title: result.title
+        }
+        that.writeResponse(data, 'index');
+      }
+    });
 	}else{ //for now we only go to pages by seoUrl - all others fail.
 		this.showNotFound(404);
 	}

@@ -1,5 +1,5 @@
 module.exports = {
-	"baseURL" : "http://vagabond.com",
+	"baseURL" : "http://localhost",
 	"port" : 8888,
 	"defaultRenderer" : "html",
 	"defaultController" : "page",

@@ -49,7 +49,6 @@ var authenticate = {
 				this.sendAuthorizationRequired();
 				return;
 			}
-		
 		}
 
 		this.hookComplete();
@@ -67,7 +66,9 @@ var isSecure = function(url, method, secureRoutes){
 		} else if(route.methods.indexOf(method.toLowerCase()) >- 1) {
 			secureMethod = true;
 		}
-		if(url.match(route) !== null && secureMethod){
+		console.log(route.route);
+		console.log(url);
+		if(url.match(route.route) !== null && secureMethod){
 			console.log('SECURE ROUTE');
 	  		return true;
 		} 

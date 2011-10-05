@@ -5,7 +5,7 @@
 	<%=html.createTitle(data.title)%>
 	
 	<!-- include jQuery because it is awesome -->
-	<%=html.createScript('http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js')%>
+	<%=html.createScript('http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js')%>
 
 	<!-- include main stylesheet -->
 	<link rel="stylesheet/less" type="text/css" href="/css/styles.less" /> 

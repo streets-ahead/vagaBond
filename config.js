@@ -45,6 +45,7 @@ module.exports = {
 		"start" : "<%",
 		"end" : "%>"
 	},
+  "templateDir" : "/templates",
 	"disqus" : "tkeeney",
 	"mobileEnabled" : false
 };

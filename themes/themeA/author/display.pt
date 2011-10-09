@@ -1,0 +1,45 @@
+<div id='main'>
+	
+		<div>
+			<span><b>fullname</b></span>
+			<div>
+				<%= data.author.fullname %>
+			</div>
+		</div>
+	
+		<div>
+			<span><b>username</b></span>
+			<div>
+				<%= data.author.username %>
+			</div>
+		</div>
+	
+		<div>
+			<span><b>password</b></span>
+			<div>
+				<%= data.author.password %>
+			</div>
+		</div>
+	
+		<div>
+			<span><b>email</b></span>
+			<div>
+				<%= data.author.email %>
+			</div>
+		</div>
+	
+		<div>
+			<span><b>twitter</b></span>
+			<div>
+				<%= data.author.twitter %>
+			</div>
+		</div>
+	
+		<div>
+			<span><b>bio</b></span>
+			<div>
+				<%= data.author.bio %>
+			</div>
+		</div>
+	
+</div>

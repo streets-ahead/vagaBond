@@ -37,7 +37,7 @@ module.exports = {
 		},
 		{
 			"file" : "console",
-			"level" : "debug"
+			"level" : "trace"
 		}
 	],
 	"templateCache" : 3600, // in seconds
@@ -45,7 +45,7 @@ module.exports = {
 		"start" : "<%",
 		"end" : "%>"
 	},
-  "templateDir" : "/templates",
+  "templateDir" : "/../themes/default",
 	"disqus" : "tkeeney",
 	"mobileEnabled" : false
 };

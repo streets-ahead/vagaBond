@@ -1,0 +1,42 @@
+<div id='main'>
+	<% if(data.errors) { %>
+		<% for(i in data.errors) { %>
+			<div class="alert-message error">
+				<p><strong>You Fucked UP!</strong> <%=data.errors[i]%></p>
+			</div>
+		<% } %>
+	<% } %>
+	<form action='/page' method='post'>
+		<fieldset>
+			<input type='hidden' name='_id' value='<%= data.page ? data.page._id : null %>'/>
+			<legend>Create New Web Page</legend>
+			<div class='clearfix'>
+				<label for>Title</label>
+				<div class='input'>
+					<input class='xlarge' type='TEXT' name='title', id='title' value='<%= data.page ? data.page.title : null %>'/>
+				</div>
+			</div>
+
+			<div class='clearfix'>
+				<label>Use Markdown?</label>
+				<div class='input'>
+					<input type='checkbox' name='isMD' value='Markdown?'/>
+				</div>
+			</div>
+			
+			<div class='clearfix'>
+				<label for>Body</label>
+				<div class='input'>
+					<textarea class='xlarge' type='TEXT' name='body', id='body'><%= data.page ? data.page.body : null %></textarea>
+				</div>
+			</div>
+
+			<div class='actions'>
+				<button type='submit' class='btn primary'>Create Page</button>
+				<a href="#" class='btn'>Cancel</a>
+			</div>
+
+		</fieldset>
+	</form>
+</div>
+

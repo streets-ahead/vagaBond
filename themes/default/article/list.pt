@@ -1,0 +1,9 @@
+<% for (var i=0; i<data.article.length; i++) { %>
+	<div class="summary">
+		<h3><a href="/article/<%=data.article[i].seoUrl%>"><%= data.article[i].title %></a></h3>
+		<p><%= blog.shortDisplay(markdown.parse(data.article[i].body), 5, 'article/'+data.article[i].seoUrl) %></p>
+		<hr>
+	</div>
+<% } %>
+
+

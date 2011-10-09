@@ -1,0 +1,15 @@
+<html>
+<body>
+<form action='/admin' method='POST'>
+  <% for(var i in data.themeOptions){ %>
+    <% if(data.themeOptions[i] == data.admin.theme){ %>
+      <input type='radio' name='theme' value='<%=data.themeOptions[i]%>' checked/><%=data.themeOptions[i]%><br>
+    <% } else { %>
+      <input type='radio' name='theme' value='<%=data.themeOptions[i]%>'/><%=data.themeOptions[i]%><br>
+    <% } %>
+  <% } %>
+<input type='SUBMIT' value='Save' />
+</form>
+<%= data.admin.theme %>
+</body>
+</html>

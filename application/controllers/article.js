@@ -11,9 +11,45 @@ article.prototype.collections = ['article']
 article.prototype.helpers = ['html', 'markdown', 'blog']
 module.exports = article;
 
+article.prototype.displayByDate = function(dateArray){
+  var self = this;
+  log.debug(dateArray)
+  var dateLow, dateHigh;
+  switch(dateArray.length){
+    case 1:
+      dateLow = new Date(parseInt(dateArray[0]),0,1);
+      dateHigh = new Date(parseInt(dateArray[0])+1, 0,1);
+      break;
+    case 2:
+      dateLow = new Date(parseInt(dateArray[0]), parseInt(dateArray[1])-1,1);
+      dateHigh = new Date(parseInt(dateArray[0]), parseInt(dateArray[1]), 1);
+      break;
+    case 3:
+      dateLow = new Date(parseInt(dateArray[0]), parseInt(dateArray[1])-1,parseInt(dateArray[2]));
+      dateHigh = new Date(parseInt(dateArray[0]), parseInt(dateArray[1])-1,parseInt(dateArray[2]));
+      break;
+  }
+  self.article.find({publishDate: {$gte: dateLow, $lt: dateHigh}}, function(results){
+    if(results){
+      var data = {
+        article: results,
+        innerTemplate: 'article/list',
+        title: 'Archive'
+      }
+      self.writeResponse(data, 'index')
+    }
+  });
+}
+
 article.prototype.index_get = function(urlParts, query) {
 	if(urlParts && urlParts.length>0){
 		if(urlParts.length==1){ urlParts.unshift("seoUrl"); }
+    else if (urlParts[0] == 'archive'){ 
+      urlParts.reverse()
+      urlParts.pop()
+      this.displayByDate(urlParts.reverse())
+      return;
+    }
 		this.get_get(urlParts, query);
 	}else{
 		this.list_get(urlParts, query)

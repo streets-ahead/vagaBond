@@ -11,5 +11,12 @@
 <input type='SUBMIT' value='Save' />
 </form>
 <%= data.admin.theme %>
+<ul>
+<% data.article.findAll(function(results){ %>
+<% for ( var i in results) { %>
+<li><%=results[i].title%></li>
+<% } %>
+<% }) %>
+</ul>
 </body>
 </html>

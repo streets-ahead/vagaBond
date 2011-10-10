@@ -15,7 +15,6 @@ module.exports = {
 		
 	],
 	"preControllerHooks" : [
-		"authenticate"
 	],
 	"postControllerHooks" : [
 	],

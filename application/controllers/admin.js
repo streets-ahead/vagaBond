@@ -19,7 +19,8 @@ admin.prototype.index_get = function(urlParts, query) {
       var options = fs.readdirSync(process.cwd() + '/../themes' )
       var data = {
         admin: admin,
-        themeOptions: options
+        themeOptions: options,
+        article: self.article
       }
       self.writeResponse(data, 'admin/settings')
     }

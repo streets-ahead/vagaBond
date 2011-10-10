@@ -1,0 +1,6 @@
+<div>
+  <ul>
+  <% for(var i in data.pages ) { %>
+    <li><a href='/page/edit/_id/<%=data.pages[i]._id%>'><%=data.pages[i].title%></a></li>
+  <% } %>
+</div>

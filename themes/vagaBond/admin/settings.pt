@@ -1,5 +1,9 @@
 <html>
 <body>
+<a href='/admin/articles'>Articles</a>
+<a href='/admin/pages'>Pages</a>
+<a href='/admin/authors'>Authors</a>
+<hr>
 <form action='/admin' method='POST'>
   <% for(var i in data.themeOptions){ %>
     <% if(data.themeOptions[i] == data.admin.theme){ %>
@@ -11,12 +15,5 @@
 <input type='SUBMIT' value='Save' />
 </form>
 <%= data.admin.theme %>
-<ul>
-<% data.article.findAll(function(results){ %>
-<% for ( var i in results) { %>
-<li><%=results[i].title%></li>
-<% } %>
-<% }) %>
-</ul>
 </body>
 </html>

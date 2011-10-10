@@ -47,3 +47,34 @@ admin.prototype.index_post = function(urlParts, query, postData) {
     });
   });
 };
+
+admin.prototype.articles_get = function(urlParts, query) {
+  var self = this;
+  self.article.findAll(function(results){
+    var data = {
+      articles: results
+    }
+    self.writeResponse(data, 'admin/articles');
+  });
+}
+
+admin.prototype.pages_get = function(urlParts, query) {
+  var self = this;
+  self.page.findAll(function(results){
+    var data = {
+      pages: results
+    }
+    self.writeResponse(data, 'admin/pages');
+  });
+}
+
+admin.prototype.authors_get = function(urlParts, query) {
+  var self = this;
+  self.author.findAll(function(results){
+    var data = {
+      authors: results
+    }
+    self.writeResponse(data, 'admin/authors');
+  });
+}
+

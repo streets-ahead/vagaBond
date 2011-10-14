@@ -20,7 +20,6 @@ author.prototype.index_get = function(urlParts, query) {
 };
 
 author.prototype.index_post = function(urlParts, query, postData) {
-	
 };
 
 var GH_CLIENT_ID = '562559d16db0fdbaf0f9';
@@ -28,6 +27,10 @@ var GH_SECRET = 'fd0b9d3f3b9a631c24b2727b3a2351b62aba78fa';
 var GH_BASE = 'github.com';
 var GH_AUTHORIZE = '/login/oauth/authorize';
 var GH_ACCESS_TOKEN = '/login/oauth/access_token';
+
+author.prototype.login_get = function(urlParts, query) {
+	this.writeResponse({}, 'login');
+}
 
 author.prototype.oauth_get = function(urlParts, query) {
 	var request = 'https://' + GH_BASE + GH_AUTHORIZE + '?' +

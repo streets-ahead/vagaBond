@@ -6,15 +6,13 @@ module.exports = {
 	"defaultRenderer" : "html",
 	"defaultController" : "page",
 	"routeMaps" : [
-		{
-		 	"path" : "/",
-		 	"dest" : "/article"
-	 	}
-	],
-	"routeHandlers" : [
-		
+    {
+      "path" : "/users/(.+)",
+      "dest" : "/author/login"
+    }
 	],
 	"preControllerHooks" : [
+      "authenticate"
 	],
 	"postControllerHooks" : [
 	],

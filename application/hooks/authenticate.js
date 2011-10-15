@@ -14,13 +14,13 @@ var authenticate = {
   	collections: ['author'],
   	helpers: ['config', "strings"],
 
-	useBasicAuthentication : function() {
-		var self = this;
+	useBasicAuthentication : function(self) {
 		if(self.reqData.request.headers['authorization']){
-			var authParts = this.reqData.request.headers['authorization'].split(' ')
+			var authParts = self.reqData.request.headers['authorization'].split(' ')
 			var authType = authParts[0]
 			var authString = authParts[1]
 
+      console.log(authParts)
 			if(authType.toUpperCase() === 'BASIC'){
 				authString = base64.decode(authString);
 				var userpass = authString.split(':');
@@ -28,10 +28,10 @@ var authenticate = {
 				hash.update(userpass[1]) //hash password
 				var pwd = hash.digest('base64')
 
-				var self = this;
-				this.author.find({username: userpass[0], password: pwd}, function(results){
+				self.author.find({username: userpass[0], password: pwd}, function(results){
 					if(results && results.length==1){
 					auth = true;
+          console.log("GOT IT")
 					self.reqData['auth_status'] = { user: userpass[0], authenticated: true}
 					self.hookComplete();
 					}else{
@@ -45,15 +45,6 @@ var authenticate = {
 		
 		return false;
 	},
-	
-	useSessionAuthentication : function() {
-    console.log(this);
-		var loggedIn = authenticate.reqData.session.get('userLoggedIn');
-		if(!loggedIn) {
-			self.redirect('/users/authenticate.html');
-			return true;
-		} 
-	},
 
 	run: function() {
 		var self = this;
@@ -66,7 +57,7 @@ var authenticate = {
 			if(extension === null || extension === 'html') {
 				auth = useSessionAuthentication(this.reqData, this);
 			} else {
-				auth = self.useBasicAuthentication();				
+				auth = authenticate.useBasicAuthentication(self);				
 			}
 		}
 	/*	

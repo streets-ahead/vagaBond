@@ -2,7 +2,8 @@ var lazybum = require('lazybum'),
 	Controller = lazybum.get('Controller'),
 	
 	https = require('https'),
-	qs = require('querystring');
+	qs = require('querystring'),
+  crypto = require('crypto');
 	
 var log = lazybum.getLogger(module);
 
@@ -30,6 +31,23 @@ var GH_ACCESS_TOKEN = '/login/oauth/access_token';
 
 author.prototype.login_get = function(urlParts, query) {
 	this.writeResponse({}, 'login');
+}
+
+author.prototype.login_post = function(urlParts, query, postData){
+  var self = this;
+  var hash = crypto.createHash('sha512')
+  hash.update(postData.password) //hash password
+  var pwd = hash.digest('base64')
+  this.author.findOne({username: postData.username, password: pwd}, function(obj){
+    if(obj){
+      self.reqData.session.set('author', obj.getDataObj(), self.reqData);
+      self.reqData.session.set('userLoggedIn', true, self.reqData);
+      log.warn(self.reqData.session.get('goto'))
+      self.redirect(self.reqData.session.get('goto'));
+    }else{
+      log.error("BAD LOGIN");
+    }
+  });
 }
 
 author.prototype.oauth_get = function(urlParts, query) {

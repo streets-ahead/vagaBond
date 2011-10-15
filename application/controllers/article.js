@@ -115,7 +115,7 @@ article.prototype.new_get = function(urlParts, query){
 article.prototype.new_post = function(urlParts, query, postData){
 	var that = this;
 	  postData.tags = createArray(postData.tags);
-	  postData.author = this.reqData.auth_status.user;
+	  postData.author = this.reqData.session.get('author').username;
 	  postData.publishDate = new Date();
 	  var binding = this.bindInput(this.article, postData);
 	  if(binding.valid){

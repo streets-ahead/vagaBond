@@ -2,10 +2,11 @@ var lazyBum = require('lazyBum'),
     crypto = require('crypto'),
     base64 = require('base64');
 
-var useSessionAuthentication = function(reqData){
+var useSessionAuthentication = function(reqData, ctx){
   var loggedIn = reqData.session.get('userLoggedIn');
   if(!loggedIn){
-    this.redirect('/users/authenticate.html');
+    reqData.session.set('goto', reqData.url.pathname, reqData);
+    ctx.redirect('/users/authenticate.html');
     return true;
   }
 }
@@ -63,7 +64,7 @@ var authenticate = {
 			var auth = false;
 			var extension = self.strings.getExtension(url);
 			if(extension === null || extension === 'html') {
-				auth = useSessionAuthentication(this.reqData);
+				auth = useSessionAuthentication(this.reqData, this);
 			} else {
 				auth = self.useBasicAuthentication();				
 			}

@@ -34,7 +34,7 @@ module.exports = {
 		},
 		{
 			"file" : "console",
-			"level" : "debug"
+			"level" : "trace"
 		}
 	],
 	"templateCache" : 3600, // in seconds

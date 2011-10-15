@@ -15,8 +15,11 @@ vbTheme.prototype.render = function(data, sandbox, templateName){
   var self = this;
   self.admin.findOne({}, function(admin){
     if(admin){
-      self.config.getConfig().templateDir = '/../themes/' + admin.theme
-      lbHtml(data, sandbox, templateName,self);
-    }
+      	self.config.getConfig().templateDir = '/../themes/' + admin.theme;
+      	lbHtml(data, sandbox, templateName,self);
+    } else {
+		self.config.getConfig().templateDir = '/../themes/vagaBond';
+     	lbHtml(data, sandbox, templateName,self);
+	}
   });
 }

@@ -9,6 +9,10 @@ module.exports = {
     {
       "path" : "/users/(.+)",
       "dest" : "/author/login"
+    },
+    {
+      "path" : "/",
+      "dest" : "/article"
     }
 	],
 	"preControllerHooks" : [

@@ -78,7 +78,7 @@ article.prototype.get_get = function(urlParts, query){
 		}else{
 			data.article = res;
 			if(res.length == 1){
-				data.title = res.title
+				data.title = res[0].title
 				data.innerTemplate = 'article/display'
 			}else{
 				data.title = 'vagaBond | Articles'

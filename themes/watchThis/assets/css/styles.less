@@ -1,0 +1,177 @@
+@import "lib/bootstrap/reset.less";
+@import "lib/bootstrap/variables.less";
+@import "lib/bootstrap/mixins.less";
+@import "lib/bootstrap/patterns.less";
+@import "lib/bootstrap/forms.less";
+
+@bloodRed: #660000;
+@otherRed: #A82A15;
+
+*{ margin: 0; padding: 0; }*
+:focus, :active { outline: 0; }
+html{
+	height: 100%;
+}
+body{
+	font: .9em Georgia, "Times New Roman", Sans-Serif;
+	background: #DEDEDF;
+	color: #333;
+	height: 100%;
+}
+
+a{
+	color: @otherRed;
+	text-decoration: none;
+}
+
+img{
+	border: 0;
+}
+
+header{
+	width: 100%;
+	/*background: url(http://subtlepatterns.com/patterns/black_linen_v2.png);*/
+	background: url(http://subtlepatterns.com/patterns/concrete_wall.png);
+	div{
+		margin: 0 auto;
+		width: 900px;
+	}
+}
+
+
+h1{
+	float: left;
+	margin: 20px 0 50px;
+	font-size: 4em;
+	color: #fff;
+}
+
+h2{
+	font-size: 2.4em;
+	font-weight: normal;
+	margin: 0 0 20px;
+	a:hover{
+		background: @otherRed;
+		color: #fff;
+	}
+}
+
+.hr{
+	color: #ccc;
+}
+
+p{
+	margin: 5px 0 15px;
+	line-height: 1.6em;
+}
+
+#content{
+	margin: 25px auto;
+	width: 900px;
+}
+
+#top{
+	float: right;
+	margin: 38px 0 30px 0;
+	li{
+		list-style: none;
+		display: inline;
+		a{
+			float: left;
+			padding: 6px 20px;
+			margin: 3px 2px 0 0;
+			color: #ccc;
+			&.current{
+				color: #fff;
+				background: @otherRed;
+			}
+			&:hover{
+				background: #808080;
+				color: #fff;
+			}
+		}
+	}
+}
+
+#intro{
+	clear: both;
+	padding: 15px 0 1px 20px;
+	border: 1px solid #dedede;
+	font-size: 1.3ep;
+	background: #eee;
+	margin: 0 0 30px;
+}
+
+#login{
+	clear: both;
+	margin: auto;
+	width: 500px;
+	border: 1px solid #dedede;
+	padding-top: @baseline;
+	/*font-size: 1.3em;*/
+	background: #eee;
+}
+
+.settings(@pos: "left"){
+	float: @pos;
+	margin: auto;
+	width: 425px;
+	border: 1px solid #dedede;
+	padding-top: @baseline;
+	/*font-size: 1.3em;*/
+	background: #eee;
+}
+
+#settingsRight{
+	.settings(right);
+}
+#settingsLeft{
+	.settings(left);
+}
+
+#left { 
+	clear: both;
+	width: 900px; 
+	margin: 0 0 15px; 
+}
+#right { 
+	float: right; 
+	width: 280px;
+	h3 { 
+		border-bottom: 1px solid #ccc; 
+		margin: 0 0 10px; 
+	}
+	img { 
+		margin: 0 3px 3px 0; 
+		border: 2px solid #eee; 
+		padding: 2px; 
+	}
+	li { 
+		list-style: none; 
+		a{ 
+			display: block; 
+			border-bottom: 1px solid #ccc; 
+			padding: 5px 5px;
+		}
+	}
+
+}
+
+.tag{
+	display: inline-block;
+	padding: 5px;	
+}
+
+.modal{
+	width: 750px;
+	padding: 15px;
+	left: 40%;
+}
+
+.btn{
+	&.primary{
+		.gradientBar(@otherRed, @bloodRed)
+	}
+}
+#footer { clear: both; padding: 15px 0; border-top: 1px solid #ccc; }
+	#r { float: right; }

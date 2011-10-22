@@ -1,0 +1,13 @@
+<div id='main'>
+	
+		<h3><%=data.page.title%></h3>
+	
+		<div>
+			<% if(data.page.isMD){ %>
+				<%= markdown.parse(data.page.body) %>
+			<% }else{ %>
+				<%= data.page.body %>
+			<% } %>
+		</div>
+	
+</div>

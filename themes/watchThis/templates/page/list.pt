@@ -1,0 +1,26 @@
+<div id='main'>
+	<% for (var i=0; i<data.page.length; i++) { %>
+		
+			<div>
+				<span><b>title</b></span>
+				<div>
+					<%= data.page[i].title %>
+				</div>
+			</div>
+		
+			<div>
+				<span><b>body</b></span>
+				<div>
+					<%= data.page[i].body %>
+				</div>
+			</div>
+		
+			<div>
+				<span><b>seoUrl</b></span>
+				<div>
+					<%= data.page[i].seoUrl %>
+				</div>
+			</div>
+		
+	<% } %>
+</div>

@@ -1,0 +1,6 @@
+<div>
+  <ul>
+  <% for(var i in data.authors ) { %>
+    <li><a href='/author/edit/_id/<%=data.authors[i]._id%>'><%=data.authors[i].username%></a></li>
+  <% } %>
+</div>

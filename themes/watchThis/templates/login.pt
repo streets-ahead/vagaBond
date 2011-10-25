@@ -21,6 +21,12 @@
   </header>
   <div id='content'>
 
+  	<% if(data.errorMsg) { %>
+  		<div class="alert-message error">
+  			<p><%= data.errorMsg %></p>
+		</div>
+  	<% } %>
+
     <div id="login">
 	  	<form action='/author/login' method='POST'>
 	  		<fieldset>

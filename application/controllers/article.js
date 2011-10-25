@@ -8,7 +8,7 @@ var article = Controller.extend(function() {
 });
 
 article.prototype.collections = ['article']
-article.prototype.helpers = ['html', 'markdown', 'blog']
+article.prototype.helpers = ['html', 'markdown', 'blog','session']
 module.exports = article;
 
 article.prototype.displayByDate = function(dateArray){
@@ -79,11 +79,13 @@ article.prototype.get_get = function(urlParts, query){
 			data.article = res;
 			if(res.length == 1){
 				data.title = res[0].title
+				data.loggedIn = that.reqData.session.get('userLoggedIn')
 				data.innerTemplate = 'article/display'
 			}else{
 				data.title = 'vagaBond | Articles'
 				data.innerTemplate = 'article/list'
 			}
+			log.warn(that.session)
 			that.writeResponse(data, 'index')
 		}
 	})
@@ -115,7 +117,7 @@ article.prototype.new_get = function(urlParts, query){
 article.prototype.new_post = function(urlParts, query, postData){
 	var that = this;
 	  postData.tags = createArray(postData.tags);
-	  postData.author = this.reqData.session.get('author').username;
+	  postData.author = this.reqData.session.get('author').fullname
 	  postData.publishDate = new Date();
 	  var binding = this.bindInput(this.article, postData);
 	  if(binding.valid){

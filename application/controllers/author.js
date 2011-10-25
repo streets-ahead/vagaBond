@@ -45,7 +45,8 @@ author.prototype.login_post = function(urlParts, query, postData){
       log.warn(self.reqData.session.get('goto'))
       self.redirect(self.reqData.session.get('goto'));
     }else{
-      log.error("BAD LOGIN");
+      var data = { errorMsg: "Wrong username or password, jack-ass!" }
+      self.writeResponse(data, 'login');
     }
   });
 }

@@ -12,7 +12,7 @@ var useSessionAuthentication = function(reqData, ctx){
 }
 var authenticate = {
   	collections: ['author'],
-  	helpers: ['config', "strings"],
+  	helpers: ['config', "strings", 'session'],
 
 	useBasicAuthentication : function(self) {
 		if(self.reqData.request.headers['authorization']){

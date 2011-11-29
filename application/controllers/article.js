@@ -99,14 +99,14 @@ article.prototype.get_get = function(urlParts, query){
 
 article.prototype.list_get = function(urlParts, query, postData){
 	var that = this;
-	this.article.findAll(function(results){
+	this.article.find({publishDate: {$lt: new Date()}}, function(results){
 	    var data = {
 	      article: results,
 			title: 'vagaBond | Blog', 
 			innerTemplate: 'article/list'
 	    }
 	    that.writeResponse(data, 'index')
-	  });
+	  }, {'sort': [['publishDate', 'desc']]});
 }
 
 article.prototype.new_get = function(urlParts, query){

@@ -1,6 +1,7 @@
 <div id='main'>
 	
 	<h2><%=data.article[0].title%></h2>
+	<h4><%=data.author.fullname%></h4>
 	<h5><span><%=data.article[0].publishDate.toDateString()%></span></h5>
 
 	<div>

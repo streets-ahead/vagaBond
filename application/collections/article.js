@@ -20,4 +20,6 @@ var article = Collection.extend(function() {
   });
 });
 
+article.prototype.lbId = 'seoUrl'
+
 module.exports = article;

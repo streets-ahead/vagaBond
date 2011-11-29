@@ -40,7 +40,7 @@ author.prototype.login_post = function(urlParts, query, postData){
   var pwd = hash.digest('base64')
   this.author.findOne({username: postData.username, password: pwd}, function(obj){
     if(obj){
-      self.reqData.session.set('author', obj.getDataObj(), self.reqData);
+      self.reqData.session.set('author', obj, self.reqData);
       self.reqData.session.set('userLoggedIn', true, self.reqData);
       log.warn(self.reqData.session.get('goto'))
       self.redirect(self.reqData.session.get('goto'));

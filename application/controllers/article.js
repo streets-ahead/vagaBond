@@ -27,9 +27,11 @@ article.prototype.displayByDate = function(dateArray){
       break;
     case 3:
       dateLow = new Date(parseInt(dateArray[0]), parseInt(dateArray[1])-1,parseInt(dateArray[2]));
-      dateHigh = new Date(parseInt(dateArray[0]), parseInt(dateArray[1])-1,parseInt(dateArray[2]));
+      dateHigh = new Date(parseInt(dateArray[0]), parseInt(dateArray[1])-1,parseInt(dateArray[2])+1);
       break;
   }
+	log.warn(dateLow)
+	log.warn(dateHigh)
   self.article.find({publishDate: {$gte: dateLow, $lt: dateHigh}}, function(results){
     if(results){
       var data = {

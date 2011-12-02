@@ -30,7 +30,7 @@
 		    var disqus_shortname = '<%= blog.disqusName() %>'; // required: replace example with your forum shortname
 		    var disqus_identifier = '<%= data.article[0]._id %>';
 		    var disqus_url = '<%= blog.baseUrl()%>/article/<%=data.article[0].seoUrl%>';
-		    var disqus_developer = 1;
+		    //var disqus_developer = 1;
 
 		    /* * * DON'T EDIT BELOW THIS LINE * * */
 		    (function() {

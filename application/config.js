@@ -47,6 +47,6 @@ module.exports = {
 		"end" : "%>"
 	},
   "templateDir" : "/../themes/default",
-	"disqus" : "tkeeney",
+	"disqus" : "streetsahead",
 	"mobileEnabled" : false
 };

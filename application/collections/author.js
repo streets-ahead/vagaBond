@@ -1,4 +1,4 @@
-var lazybum = require('lazybum'),
+var lazybum = require('lazyBum'),
 	Collection = lazybum.get('Collection'),
     crypto = require('crypto'),
     base64 = require('base64');

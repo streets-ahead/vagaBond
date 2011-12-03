@@ -1,4 +1,4 @@
-var lazybum = require('lazybum'),
+var lazybum = require('lazyBum'),
 	Controller = lazybum.get('Controller');
 	
 var log = lazybum.getLogger(module);

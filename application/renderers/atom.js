@@ -16,15 +16,15 @@ atom.prototype.render = function(obj) {
 	feed.setChannelElement('author', {'name' : 'Streets Ahead LLC.', 'email':'team@streetsaheadllc.com'});
 	//feed.setDate('updated', obj.posts[0].date);
 
-	for(var i = 0; i < obj.posts.length; i++ ) {
+	for(var i = 0; i < obj.article.length; i++ ) {
 		newItem = feed.createNewItem();
 		//Add elements to the feed item
 		//Use wrapper functions to add common feed elements
-		newItem.setTitle(obj.posts[i].title);
-		newItem.setLink(lbConfig.getConfig().baseURL + 'article/' + obj.posts[i].page_url);
-		newItem.setDate(obj.posts[i].date);
+		newItem.setTitle(obj.article[i].title);
+		newItem.setLink(lbConfig.getConfig().baseURL + 'article/' + obj.article[i].page_url);
+		newItem.setDate(obj.article[i].date);
 		//Internally changed to "summary" tag for ATOM feed
-		newItem.setDescription(obj.posts[i].body);
+		newItem.setDescription(obj.article[i].body);
 		//Now add the feed item	
 		feed.addItem(newItem);
 	}

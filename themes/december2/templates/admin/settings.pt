@@ -1,0 +1,59 @@
+<html>
+<head>
+	<meta charset=utf-8 />
+	<%=html.createTitle(data.title)%>
+	
+	<!-- include jQuery because it is awesome -->
+	<%=html.createScript('http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js')%>
+
+	<!-- include main stylesheet -->
+	<link rel="stylesheet/less" type="text/css" href="/css/styles.less" /> 
+	<%=html.createScript('client_scripts/less-1.1.3.min.js')%>
+	<!--[if lt IE 9]><script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<header>
+    <div>
+      <h1><a href="/article"><span class="hr">vaga</span>Bond</a></h1>
+    </div>
+    <div style="clear: both"></div>
+  </header>
+  <div id='content'>
+  	<div id='settingsLeft'>
+  		<ul>
+  			<li><a href='/admin/articles'>Articles</a</li>
+  			<li><a href='/admin/pages'>Pages</a</li>
+  			<li><a href='/admin/authors'>Authors</a</li>
+  		</ul>
+  	</div>
+  	<div id='settingsRight'>
+  		<form action='/admin' method='POST'>
+  			<fieldset>
+  				<legend>Site Theme</legend>
+  				<div class="clearfix">
+  					<label for="theme">Choose a Theme</label>
+  					<div class='input'>
+  						<ul class="inputs-list">
+  							<% for(var i in data.themeOptions) { %>
+  								<li><label>
+  								<% if(data.themeOptions[i]==data.admin.theme){ %>
+  									<input type='radio' name='theme' value='<%=data.themeOptions[i]%>' checked/>
+  								<% }else { %>
+  									<input type='radio' name='theme' value='<%=data.themeOptions[i]%>'/>
+  								<% } %>
+  								<span><%=data.themeOptions[i]%></span>
+  								</label></li>
+  							<% } %>
+  						</ul>
+  					</div>
+  				</div>
+  			</fieldset>
+  			<div class='input'>
+  				<input type="submit" class="btn primary" value="Save" />
+  			</div>
+  		</form>
+  	</div>
+  </div>
+
+</body>
+</html>

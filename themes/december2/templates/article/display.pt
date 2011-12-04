@@ -1,33 +1,28 @@
-	<section class='grid-8'>
-		<article>
-			<h2><%=data.article[0].title%> <span class='by'>by <a href='#'><%=data.author.fullname%></a></span></h2>
-			<time>
-				<div class='month'>Dec</div> 
-				<div class='day'>1</div>
-			</time>
-			<section>
-				<p>
-					My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot.
-				</p>
-			</section>
-			<footer>
-				<a href='#'>Read All 467 Words</a>
-			</footer>
-		</article>
-		
-		<article>
-			<h2><a href='#'>My Awesome Post</a> <span class='by'>by <a href='#'>Terry</a></span></h2>
-			<time>
-				<div class='month'><%=data.article[0].publishDate.toString().substring(4, 7)%></div> 
-				<div class='day'><%=data.article[0].publishDate.getDay()%></div>
-			</time>
-			<section>
-				<%= markdown.parse(data.article[0].body) %>
-			</section>
-			<footer>
-				<a href='#'>Read All 467 Words</a>
-			</footer>
-		</article>
+<div id='main'>
+	
+	<h2><%=data.article[0].title%></h2>
+	<h4><%=data.author.fullname%></h4>
+	<h5><span><%=data.article[0].publishDate.toDateString()%></span></h5>
+
+	<div>
+		<p>
+			<%= markdown.parse(data.article[0].body) %>
+		<p>
+	</div>
+
+	
+	<div>
+		<span><b>Tags:</b></span>
+		<div>
+			<ul >
+			<% for(var i in data.article[0].tags) { %>
+				<li class="tag"><a href='/article/tags/<%=data.article[0].tags[i]%>'><%= data.article[0].tags[i] %></a></li>
+			<% } %>
+			</ul>
+		</div>
+	</div>
+
+
 
 	<div id="disqus_thread"></div>
 		<script type="text/javascript">
@@ -47,8 +42,7 @@
 		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	</div>
-	
-</section>
+</div>
 
 	<% if(data.loggedIn) { %>
 

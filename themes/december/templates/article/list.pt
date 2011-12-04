@@ -1,7 +1,19 @@
-<% for (var i=0; i<data.article.length; i++) { %>
-	<div>
-		<h2><a href="/article/<%=data.article[i].seoUrl%>"><%= data.article[i].title %></a></h2>
-		<p><%= blog.shortDisplay(markdown.parse(data.article[i].body), 750, 'article/' + data.article[i].seoUrl) %></p>
-	</div>	
-<% } %>
-
+<section class='grid-8'>
+	<% for (var i=0; i<data.article.length; i++) { %>
+	<article>
+		<h2><a href="/article/<%=data.article[i].seoUrl%>"><%= data.article[i].title %></a> <span class='by'>by <a href='#'><%=data.article[i].author.fullname%></a></span></h2>
+		<time>
+			<div class='month'>Dec</div> 
+			<div class='day'>1</div>
+		</time>
+		<section>
+			<p>
+				<%= blog.shortDisplay(markdown.parse(data.article[i].body), 750, 'article/' + data.article[i].seoUrl) %>
+			</p>
+		</section>
+		<footer>
+			<a href='/article/<%=data.article[i].seoUrl%>'>Read All 467 Words</a>
+		</footer>
+	</article>
+	<% } %>
+</section>

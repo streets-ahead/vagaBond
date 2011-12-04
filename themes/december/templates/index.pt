@@ -1,37 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
 <head>
-	<meta charset=utf-8 />
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 	<%=html.createTitle(data.title)%>
 	
-	<!-- include jQuery because it is awesome -->
-	<%=html.createScript('http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js')%>
-
-	<!-- include main stylesheet -->
-	<link rel="stylesheet/less" type="text/css" href="/css/styles.less" /> 
-	<%=html.createScript('client_scripts/less-1.1.3.min.js')%>
-  <%=html.createScript('client_scripts/bootstrap-modal.js')%>
-  <%=html.createScript('client_scripts/vB.js')%>
-	<!--[if lt IE 9]><script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link rel=stylesheet href=css/inuit.css>
+	<link rel=stylesheet href=css/igloos.css>
+	<link rel=stylesheet href=css/style.css>
+	<link rel=author href=humans.txt>
+	
+	<!-- Favicons and the like (avoid using transparent .png) -->
+	<link rel="shortcut icon" href=icon.png>
+	<link rel=apple-touch-icon-precomposed href=icon.png />
+	
+	<script type="text/javascript" src="http://use.typekit.com/gtq1pzt.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
-  <header>
-    <div>
-      <h2>Streets Ahead</h2>
-      <h3>'Tis the Season to Blog</h3>
-    </div>
-    <div style="clear: both"></div>
-  </header>
-  <div id='content'>
-    <!-- <div id="intro">
-      <p>Phasellus augue diam, <a href="#">vestibulum non</a>, iaculis eget, tristique sed, lectus. Sed pede. Nullam egestas ante a mauris. Aliquam metus turpis, luctus ac, sagittis eget, <a href="#">elementum tincidunt</a>, massa.</p>
-    </div> -->
-
-    <div id="left">
-      {$#innerTemplate}    
-    </div>
-
-  </div> <!-- /container -->
-
-  </body>
+<body class=wrapper>
+	<div class='colorbar'></div>
+	<header>
+		<hgroup>
+			<h1><a href='/'>Streets Ahead</a></h1>
+			<ul class='social'>
+				<li><a href='mailto:team@streetsaheadllc.com'></a></li>
+				<li><a href='http://streetsaheadllc.com/article.atom'></a></li>
+				<li><a href='http://twitter.com/streetsaheadllc'></a></li>
+			</ul>
+			<div class='lines'><h3>Presents</h3></div>
+			<h2>Post - A - Day December</h2>
+		</hgroup>
+	</header>
+	
+	<div class=grids>
+		{$#innerTemplate}  
+		
+		<div class='grid-1'>&nbsp;
+		</div>
+		<aside class='grid-3'>
+			<p>
+				We have a passion for exploring new technology and making apps that are fun and easy to use.
+			</p>
+			<h3>Dana</h3>
+			<p>
+				is an incredibly talented business analyst with an eye for design and a passion for quality. From requirements to design to training she brings a wealth of knowledge and experience, as well as an amazing attention to detail.
+			</p>
+			
+			<h3>Terry</h3>
+			<p>
+			is a lover of Android, JavaScript, Web. He can use his extensive experience dealing with large amounts of data in the enterprise to help you migrate, correct, and massage your data into any form you need. He has years of experience writing quality code that “just works” and is always up for an argument about how much better Android is than iOS.
+			</p>
+			
+			<h3>Sam</h3>
+			<p>
+			is awesome.
+			</p>
+		</aside>
+	</div><!-- /grids -->
+	<footer class='grids'> 
+		<div class='grid-6'>
+			<p>© 2011 Streets Ahead LLC</p>
+		</div>
+		<div class='grid-6 right'>
+			<p>This site is Streets Ahead</p>
+		</div>
+		<div style='clear:both'></div>
+	</footer>
+</body>
 </html>

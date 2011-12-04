@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<%=html.createTitle(data.title)%>
+	
+	<!-- include jQuery because it is awesome -->
+	<%=html.createScript('http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js')%>
+
+	<!-- include main stylesheet -->
+	<link rel="stylesheet/less" type="text/css" href="/css/styles.less" /> 
+	<%=html.createScript('client_scripts/less-1.1.3.min.js')%>
+  <%=html.createScript('client_scripts/bootstrap-modal.js')%>
+  <%=html.createScript('client_scripts/vB.js')%>
+	<!--[if lt IE 9]><script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+  <header>
+    <div>
+      <h2>Streets Ahead</h2>
+      <h3>'Tis the Season to Blog</h3>
+    </div>
+    <div style="clear: both"></div>
+  </header>
+  <div id='content'>
+    <!-- <div id="intro">
+      <p>Phasellus augue diam, <a href="#">vestibulum non</a>, iaculis eget, tristique sed, lectus. Sed pede. Nullam egestas ante a mauris. Aliquam metus turpis, luctus ac, sagittis eget, <a href="#">elementum tincidunt</a>, massa.</p>
+    </div> -->
+
+    <div id="left">
+      {$#innerTemplate}    
+    </div>
+
+  </div> <!-- /container -->
+
+  </body>
+</html>

@@ -67,11 +67,11 @@ section article:first-child {
 
 article {
 	margin-top:40px;
+	position:relative;
 }
 
 article section {
 	clear:both;
-	position:relative;
 }
 
 article h2 {

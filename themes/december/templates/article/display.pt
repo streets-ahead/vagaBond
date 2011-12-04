@@ -1,11 +1,11 @@
 	<section class='grid-8'>
 		<article>
+			<time>
+				<div class='month'><%=data.publishDate.toString().substring(4,7)%></div> 
+				<div class='day'><%=data.publishDate.getDate()%></div>
+			</time>
 			<h2><%=data.article[0].title%></h2> <div class='by'>by <a href='#'><%=data.author.fullname%></a></div>
 			<section>
-				<time>
-					<div class='month'>Dec</div> 
-					<div class='day'>1</div>
-				</time>
 				<%= markdown.parse(data.article[0].body) %>
 			</section>
 

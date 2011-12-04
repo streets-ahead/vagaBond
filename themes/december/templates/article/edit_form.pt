@@ -1,4 +1,4 @@
-<div id='main'>
+<div id='main' class='grid-8'>
 	<% if(data.errors) { %>
 		<% for(i in data.errors) { %>
 			<div class="alert-message error">
@@ -17,6 +17,7 @@
 				</div>
 			</p>
 			<p>
+				<label for="body">Body</label>
 				<div class='input'>
 					<textarea class='span10' name='body' id='body' rows='15'><%= data.article ? data.article.body : null %></textarea>
 					<p>Create your article here using Markdown</p>

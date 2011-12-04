@@ -14,7 +14,7 @@
 			</p>
 		</section>
 		<footer>
-			<a href='/article/<%=data.article[i].seoUrl%>'>Read All 467 Words</a>
+			<a href='/article/<%=data.article[i].seoUrl%>'>Read More</a>
 		</footer>
 	</article>
 	<% } %>

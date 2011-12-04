@@ -102,12 +102,12 @@ article.prototype.get_get = function(urlParts, query){
 			if(res.length == 1){
 				data.author = res[0].author
 			
-				data.title = res[0].title
+				data.title = res[0].title + ' | Streets Ahead LLC'
 				data.loggedIn = that.reqData.session.get('userLoggedIn')
 				data.innerTemplate = 'article/display'
 				that.writeResponse(data, 'index')
 			}else{
-				data.title = 'vagaBond | Articles'
+				data.title = 'Articles | Streets Ahead LLC'
 				data.innerTemplate = 'article/list'
 				that.writeResponse(data, 'index')
 			}
@@ -121,7 +121,7 @@ article.prototype.list_get = function(urlParts, query, postData){
 	this.article.find({publishDate: {$lt: new Date()}}, function(results){
 	    var data = {
 	      article: results,
-			title: 'vagaBond | Blog', 
+			title: 'Blogging About Mobile and Web Apps | Streets Ahead LLC', 
 			innerTemplate: 'article/list'
 	    }
 	    that.writeResponse(data, 'index')

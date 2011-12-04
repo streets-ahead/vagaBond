@@ -127,7 +127,7 @@ header {
 }
 
 p:first-child {
-	margin-top:10px;
+	padding-top:10px;
 }
 
 aside p {

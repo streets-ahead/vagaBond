@@ -216,6 +216,15 @@ footer .right{
 	}
 }
 
+#editform input, text-area{
+	padding:20px;
+	width:600px;
+}
+
+#editform textarea {
+	height:500px;
+}
+
 
 @media only screen and (max-width : 320px) {
 	header h1 {

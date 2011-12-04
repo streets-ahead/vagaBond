@@ -6,31 +6,31 @@
 			</div>
 		<% } %>
 	<% } %>
-	<form action='/article' method='post'>
+	<form id='editform' action='/article' method='post'>
 		<fieldset>
 			<input type='hidden' name='_id' value='<%= data.article ? data.article._id : null %>'/>
 			<legend>Write New Article</legend>
-			<div class='clearfix'>
+			<div>
 				<label for="title">Title</label>
 				<div class='input'>
-					<input class='span10' type='TEXT' name='title' id='title' value='<%= data.article ? data.article.title : null %>'/>
+					<input type='text' name='title' id='title' value='<%= data.article ? data.article.title : null %>'/>
 				</div>
 			</div>
 			<div class='clearfix'>
 				<div class='input'>
 					<textarea class='span10' name='body' id='body' rows='15'><%= data.article ? data.article.body : null %></textarea>
-					<span class="help-block">Create your article here using Markdown</span>
+					<p>Create your article here using Markdown</p>
 				</div>
 			</div>
 			<div class='clearfix'>
 				<label for="title">Tags</label>
 				<div class='input'>
-					<input class='span10' type='TEXT' name='tags' id='tags' value='<%= data.article ? data.article.tags : null %>'/>
+					<input class='span10' type='text' name='tags' id='tags' value='<%= data.article ? data.article.tags : null %>'/>
 				</div>
 			</div>
 			<div class='input'>
 				<button type='submit' class='btn primary'><%= data.isNew ? 'Post Article' : 'Update Article' %></button>
-				<a href="#" class="btn">Preview</a>
+				<!-- <a href="#" class="btn">Preview</a> -->
 			</div>
 		</fieldset>
 	</form>

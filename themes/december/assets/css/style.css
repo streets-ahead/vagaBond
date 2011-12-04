@@ -102,6 +102,7 @@ article:first-child h2 {
 
 article h2 {
 	width:415px;
+	float:left;
 }
 
 article .by {

@@ -6,7 +6,7 @@
 
 		<section>
 		<time>
-			<div class='month'><%=data.article[i].publishedDate.toString().substring(4, 7)%></div> 
+			<div class='month'><%= data.article[i].publishedDate.toString().substring(4, 7)%></div> 
 			<div class='day'><%=data.article[i].publishedDate.getDay%></div>
 		</time>
 			<p>

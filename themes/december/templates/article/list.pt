@@ -10,7 +10,7 @@
 			<div class='day'><%=data.article[i].publishDate.getDate()%></div>
 		</time>
 			<p>
-				<%= blog.shortDisplay(markdown.parse(data.article[i].body), 750, 'article/' + data.article[i].seoUrl) %>
+				<%= blog.shortDisplay(markdown.parse(data.article[i].body), 300, 'article/' + data.article[i].seoUrl) %>
 			</p>
 		</section>
 		<footer>

@@ -216,8 +216,8 @@ footer .right{
 	}
 }
 
-#editform input, text-area{
-	padding:20px;
+#editform input, #editform textarea{
+	padding:10px;
 	width:600px;
 }
 

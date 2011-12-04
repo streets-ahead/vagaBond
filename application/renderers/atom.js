@@ -1,5 +1,5 @@
 var lazyBum = require('lazyBum'),
-	Renderer = lazyBum.getLocal('Renderer', true),
+	Renderer = lazyBum.get('Renderer', true),
 	FeedBum = require('../FeedBum/FeedBum'),
 	lbConfig = require('lbConfig');
 

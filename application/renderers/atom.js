@@ -1,7 +1,7 @@
 var lazyBum = require('lazyBum'),
 	Renderer = lazyBum.get('Renderer', true),
 	FeedBum = require('feedBum'),
-	lbConfig = require('lbConfig');
+	lbConfig = lazyBum.getHelper('config');
 
 var atom = Renderer.extend(function() {
 	atom.super_.apply(this, arguments);

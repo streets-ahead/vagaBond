@@ -126,10 +126,6 @@ header {
 	margin-bottom:26px;
 }
 
-p:first-child {
-	padding-top:10px;
-}
-
 aside p {
 	margin-top:0px;
 	font-size:16px;

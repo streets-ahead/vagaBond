@@ -81,14 +81,12 @@ article.prototype.get_get = function(urlParts, query){
 		}else{
 			data.article = res;
 			if(res.length == 1){
-				that.author.findOne({_id:res[0].author}, function(auth){
-					data.author = auth
-				
-					data.title = res[0].title
-					data.loggedIn = that.reqData.session.get('userLoggedIn')
-					data.innerTemplate = 'article/display'
-					that.writeResponse(data, 'index')
-				})
+				data.author = res[0].author
+			
+				data.title = res[0].title
+				data.loggedIn = that.reqData.session.get('userLoggedIn')
+				data.innerTemplate = 'article/display'
+				that.writeResponse(data, 'index')
 			}else{
 				data.title = 'vagaBond | Articles'
 				data.innerTemplate = 'article/list'
@@ -124,7 +122,12 @@ article.prototype.new_get = function(urlParts, query){
 article.prototype.new_post = function(urlParts, query, postData){
 	var that = this;
 	  postData.tags = createArray(postData.tags);
-	  postData.author = this.reqData.session.get('author')._id
+	  var author = {
+	  	_id: this.reqData.session.get('author')._id,
+	  	fullname: this.reqData.session.get('author').fullname,
+	  	username: this.reqData.session.get('author').username
+	  }
+	  postData.author = author;
 	  log.debug(this.reqData.session.get('author'))
 	  postData.publishDate = new Date();
 	  var binding = this.bindInput(this.article, postData);

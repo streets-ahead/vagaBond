@@ -11,7 +11,7 @@ var article = Collection.extend(function() {
     publishDate: {type: 'Date'},
     updatedDate: {type: 'Date'},
     tags: {type: 'Array'},
-    author: {type: 'String', required:true}
+    author: {type: 'Object', required:true}
 	}]);
 
   this.addPreSaveAction(function(){

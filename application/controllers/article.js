@@ -66,9 +66,10 @@ article.prototype.index_get = function(urlParts, query) {
       urlParts.reverse()
       urlParts.pop()
       this.displayByDate(urlParts.reverse())
-    }else{
+      return;
+    }
 		this.get_get(urlParts, query);
-	}
+
 	}else{
 		this.list_get(urlParts, query)
 	}

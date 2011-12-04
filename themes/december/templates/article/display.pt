@@ -1,8 +1,8 @@
 	<section class='grid-8'>
 		<article>
 			<time>
-				<div class='month'><%=data.publishDate.toString().substring(4,7)%></div> 
-				<div class='day'><%=data.publishDate.getDate()%></div>
+				<div class='month'><%=data.article[0].publishDate.toString().substring(4,7)%></div> 
+				<div class='day'><%=data.article[0].publishDate.getDate()%></div>
 			</time>
 			<h2><%=data.article[0].title%></h2> <div class='by'>by <a href='#'><%=data.author.fullname%></a></div>
 			<section>

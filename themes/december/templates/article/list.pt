@@ -2,7 +2,7 @@
 	<% for (var i=0; i<data.article.length; i++) { %>
 	<article>
 		<h2><a href="/article/<%=data.article[i].seoUrl%>"><%= data.article[i].title %></a></h2> 
-		<div class='by'>by <a href='#'><%=data.article[i].author%></a></div>
+		<div class='by'>by <a href='#'></a></div>
 
 		<section>
 		<time>

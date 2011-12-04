@@ -29,7 +29,7 @@ atom.prototype.render = function(obj) {
 		feed.addItem(newItem);
 	}
 
-	this.endResponse(feed.generateFeed());
+	this.endResponse(feed.genarateFeed());
 }; 
 
 atom.CONTENT_TYPE = "application/atom+xml";

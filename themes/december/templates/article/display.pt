@@ -4,7 +4,7 @@
 				<div class='month'><%=data.article[0].publishDate.toString().substring(4,7)%></div> 
 				<div class='day'><%=data.article[0].publishDate.getDate()%></div>
 			</time>
-			<h2><%=data.article[0].title%></h2> <div class='by'>by <a href='#'><%=data.author.fullname%></a></div>
+			<h2><%=data.article[0].title%></h2> <div class='by'>by <a href='/article/author/<%=data.author.username%>'><%=data.author.fullname%></a></div>
 			<section>
 				<%= markdown.parse(data.article[0].body) %>
 			</section>

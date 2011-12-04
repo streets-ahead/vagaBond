@@ -17,12 +17,13 @@ atom.prototype.render = function(obj) {
 	//feed.setDate('updated', obj.posts[0].date);
 
 	for(var i = 0; i < obj.article.length; i++ ) {
+		console.log('adding ' + obj.article);
 		newItem = feed.createNewItem();
 		//Add elements to the feed item
 		//Use wrapper functions to add common feed elements
 		newItem.setTitle(obj.article[i].title);
-		newItem.setLink(lbConfig.getConfig().baseURL + 'article/' + obj.article[i].page_url);
-		newItem.setDate(obj.article[i].date);
+		newItem.setLink(lbConfig.getConfig().baseURL + 'article/' + obj.article[i].seoUrl);
+		newItem.setDate(obj.article[i].publishDate);
 		//Internally changed to "summary" tag for ATOM feed
 		newItem.setDescription(obj.article[i].body);
 		//Now add the feed item	

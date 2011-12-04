@@ -1,32 +1,16 @@
 	<section class='grid-8'>
 		<article>
-			<h2><%=data.article[0].title%> <span class='by'>by <a href='#'><%=data.author.fullname%></a></span></h2>
-			<time>
-				<div class='month'>Dec</div> 
-				<div class='day'>1</div>
-			</time>
+			<h2><%=data.article[0].title%> <span class='by'>by <a href='#'><%=data.author.username%></a></span></h2>
 			<section>
+				<time>
+					<div class='month'>Dec</div> 
+					<div class='day'>1</div>
+				</time>
 				<p>
 					My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot.
 				</p>
 			</section>
-			<footer>
-				<a href='#'>Read All 467 Words</a>
-			</footer>
-		</article>
-		
-		<article>
-			<h2><a href='#'>My Awesome Post</a> <span class='by'>by <a href='#'>Terry</a></span></h2>
-			<time>
-				<div class='month'><%=data.article[0].publishDate.toString().substring(4, 7)%></div> 
-				<div class='day'><%=data.article[0].publishDate.getDay()%></div>
-			</time>
-			<section>
-				<%= markdown.parse(data.article[0].body) %>
-			</section>
-			<footer>
-				<a href='#'>Read All 467 Words</a>
-			</footer>
+
 		</article>
 
 	<div id="disqus_thread"></div>

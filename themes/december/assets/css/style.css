@@ -66,8 +66,11 @@ section article:first-child {
 }
 
 article {
-	position:relative;
 	margin-top:40px;
+}
+
+article section {
+	position:relative;
 }
 
 article h2 {

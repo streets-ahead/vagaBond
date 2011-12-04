@@ -1,12 +1,13 @@
 <section class='grid-8'>
 	<% for (var i=0; i<data.article.length; i++) { %>
 	<article>
-		<h2><a href="/article/<%=data.article[i].seoUrl%>"><%= data.article[i].title %></a> <span class='by'>by <a href='#'><%=data.article[i].author.fullname%></a></span></h2>
+		<h2><a href="/article/<%=data.article[i].seoUrl%>"><%= data.article[i].title %></a> <span class='by'>by <a href='#'><%=data.article[i].author.username%></a></span></h2>
+
+		<section>
 		<time>
 			<div class='month'>Dec</div> 
 			<div class='day'>1</div>
 		</time>
-		<section>
 			<p>
 				<%= blog.shortDisplay(markdown.parse(data.article[i].body), 750, 'article/' + data.article[i].seoUrl) %>
 			</p>

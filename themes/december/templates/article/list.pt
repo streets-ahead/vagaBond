@@ -6,8 +6,8 @@
 
 		<section>
 		<time>
-			<div class='month'><%= data.article[i].publishedDate.toString().substring(4, 7)%></div> 
-			<div class='day'><%=data.article[i].publishedDate.getDay%></div>
+			<div class='month'><%= data.article[i].publishDate.toString().substring(4, 7)%></div> 
+			<div class='day'><%=data.article[i].publishDate.getDay%></div>
 		</time>
 			<p>
 				<%= blog.shortDisplay(markdown.parse(data.article[i].body), 750, 'article/' + data.article[i].seoUrl) %>

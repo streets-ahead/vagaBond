@@ -102,7 +102,7 @@ article:first-child h2 {
 }
 
 article h2 {
-	width:410px;
+	width:419px;
 	float:left;
 }
 
@@ -113,6 +113,7 @@ article .by {
 	float:right;
 	padding-top:23px;
 	font-weight:normal;
+	width:200px;
 }
 
 article .by a{

@@ -44,16 +44,31 @@ article.prototype.displayByDate = function(dateArray){
   });
 }
 
+article.prototype.byAuthor_get = function(authorName){
+	var self = this;
+	self.article.find({"author.username": authorName, publishDate: {$lt: new Date()}}, function(results){
+		if(results){
+			log.debug(results)
+			var data = {
+				article: results,
+				innerTemplate: 'article/list'
+				// title: results[0].author.fullname
+			}
+			self.writeResponse(data, 'index')
+		}
+	})
+}
+
 article.prototype.index_get = function(urlParts, query) {
 	if(urlParts && urlParts.length>0){
-		if(urlParts.length==1){ urlParts.unshift("seoUrl"); }
+		if(urlParts.length==1){ urlParts.unshift("seoUrl");}
     else if (urlParts[0] == 'archive'){ 
       urlParts.reverse()
       urlParts.pop()
       this.displayByDate(urlParts.reverse())
-      return;
-    }
+    }else{
 		this.get_get(urlParts, query);
+	}
 	}else{
 		this.list_get(urlParts, query)
 	}
@@ -72,6 +87,9 @@ article.prototype.index_post = function(urlParts, query, postData) {
 
 article.prototype.get_get = function(urlParts, query){
 	var that = this;
+	if(urlParts[0]=="author"){
+		urlParts[0]="author.username"
+	}
 	var search = this.urlPathToMap(urlParts);
 	console.log(search);
 	this.article.find(search, function(res){

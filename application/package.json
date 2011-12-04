@@ -15,7 +15,8 @@
 	"dependencies": {
 		"lazyBum" : ">= 0.2.0",
 		"base64" : ">=2.0.3",
-		"node-markdown" : ">=0.1.0"
+		"node-markdown" : ">=0.1.0",
+		"feedBum" : "= 0.9.0"
 	},
 	"directories": {
 		"controllers" : "./controllers",

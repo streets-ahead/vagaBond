@@ -62,7 +62,7 @@ header h3 {
 }
 
 section article:first-child {
-	margin-top:0px;
+	margin-top:10px;
 }
 
 article {
@@ -100,17 +100,20 @@ article:first-child h2 {
 	margin-top:0px;
 }
 
-article h2 .by {
+article h2 {
+	width:415px;
+}
+
+article .by {
 	font-size:18px;
 	text-transform:none;
 	color:#666;
-	display:block;
 	float:right;
-	margin-top:23px;
+	padding-top:23px;
 	font-weight:normal;
 }
 
-article h2 .by a{
+article .by a{
 	color:#4a8ec2;
 	text-transform: capitalize;
 }
@@ -203,7 +206,7 @@ footer .right{
 		text-align:left;
 	}
 	
-	article h2 .by {
+	article .by {
 		float:none;
 		margin-top:5px;
 	}
@@ -235,7 +238,7 @@ footer .right{
 		font-size:27px;
 	}
 	
-	article h2 .by {
+	article .by {
 		float:none;
 		margin-top:5px;
 	}

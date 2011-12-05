@@ -30,7 +30,7 @@ var mockingbird = {
 						port: "465",
 						ssl: true,
 						domain: "sts-ahead.com",
-						to: "terry@sts-ahead.com",
+						to: "team@sts-ahead.com",
 						from: "mb@sts-ahead.com",
 						subject: "MockingBird: Write A Blog Post (" + (new Date()).toDateString() +" )",
 						body: "There is no blog post scheduled to be published today.\nYou should get on that ... much like one would \"get on\" Sam's Mom",

@@ -100,7 +100,7 @@ article:first-child h2 {
 	margin-top:0px;
 }
 
-article h2 {
+article > h2 {
 	width:439px;
 	float:left;
 }

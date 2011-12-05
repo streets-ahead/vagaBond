@@ -216,7 +216,7 @@ footer .right{
 	}
 }
 
-input[type='text'], textarea{
+input[type='text'], input[type='password'], textarea{
 	padding:10px;
 	width:600px;
 }

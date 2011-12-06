@@ -1,8 +1,11 @@
+html {
+	background-color:#EDEDED;	
+}
+
 body {
 	color:#666;
 	font-family: brandon-grotesque-1,brandon-grotesque-2,sans-serif;
 	font-size:18px;
-	background-color:#EDEDED;
 }
 
 h1, h2, h3, h4, h5, h6 {

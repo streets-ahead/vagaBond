@@ -33,7 +33,7 @@
 	<link href="/client_scripts/prettify/prettify.css" type="text/css" rel="stylesheet" />
 	<script type="text/javascript" src="/client_scripts/prettify/prettify.js"></script>
 	<script>
-		prettyPrint()
+		window.onload = prettyPrint;
 	</script>
 	
 </section>

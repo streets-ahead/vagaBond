@@ -17,8 +17,11 @@
 	
 	<script type="text/javascript" src="http://use.typekit.com/gtq1pzt.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+	<link href="/client_scripts/prettify/prettify.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="/client_scripts/prettify/prettify.js"></script>
 </head>
-<body class=wrapper>
+<body class=wrapper onload='prettyPrint()'>
 	<div class='colorbar'></div>
 	<header>
 		<hgroup>

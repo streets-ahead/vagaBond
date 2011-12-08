@@ -32,6 +32,10 @@
 		<link href="/client_scripts/prettify/prettify.css" type="text/css" rel="stylesheet" />
 		<script type="text/javascript" src="/client_scripts/prettify/prettify.js"></script>
 		<script>
+			var codes = document.getElementsByTagName('code');
+			for (var i = 0; i < codes.length; i++) {
+				codes.className = "prettyprint";
+			}
 			addEventListener('load', function (event) { prettyPrint() }, false);
 		</script>
 </section>

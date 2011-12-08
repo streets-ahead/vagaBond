@@ -34,7 +34,7 @@
 		<script>
 			var codes = document.getElementsByTagName('code');
 			for (var i = 0; i < codes.length; i++) {
-				codes.className = "prettyprint";
+				codes[i].className = "prettyprint";
 			}
 			addEventListener('load', function (event) { prettyPrint() }, false);
 		</script>

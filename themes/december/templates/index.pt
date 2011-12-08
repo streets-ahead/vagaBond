@@ -68,9 +68,6 @@
 		<div style='clear:both'></div>
 	</footer>
 	
-	<link href="/client_scripts/prettify/prettify.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="/client_scripts/prettify/prettify.js"></script>
-	
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-16644501-7']);

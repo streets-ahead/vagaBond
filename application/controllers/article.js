@@ -112,7 +112,7 @@ article.prototype.get_get = function(urlParts, query){
 				that.writeResponse(data, 'index')
 			}
 		}
-	})
+	}, {'sort': [['publishDate', 'desc']]})
 	
 }
 

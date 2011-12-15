@@ -2,6 +2,7 @@ body {
 	color:#666;
 	font-family: brandon-grotesque-1,brandon-grotesque-2,sans-serif;
 	font-size:18px;
+	background-color:#EDEDED;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,7 +41,7 @@ header h2 {
 	font-size:76px;
 	font-weight:700;
 	background-color:#444;
-	background: url('../images/lines.jpg') bottom center repeat-x;
+	background: url('../images/lines.png') bottom center repeat-x;
 	padding-top:0px;
 	padding-bottom:15px;
 	margin-top:0px;
@@ -51,12 +52,12 @@ header h3 {
 }
 
 .lines {
-	background: url('../images/lines.jpg') center 40% repeat-x;
+	background: url('../images/lines.png') center 40% repeat-x;
 	margin-top:-10px;
 }
 
 .lines h3 {
-	background-color:#fff;
+	background-color:#EDEDED;
 	width:125px;
 	margin:0px auto;
 }

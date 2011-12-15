@@ -42,17 +42,17 @@
 			<p>
 				We have a passion for exploring new technology and making apps that are fun and easy to use.
 			</p>
-			<h3>Dana</h3>
+			<h3><a href='#'>Dana</a></h3>
 			<p>
 				is an incredibly talented business analyst with an eye for design and a passion for quality. From design to requirements to training she brings a wealth of knowledge and experience, as well as an amazing attention to detail.
 			</p>
 			
-			<h3>Terry</h3>
+			<h3><a href='http://tkeeney.com'>Terry</a></h3>
 			<p>
 			is a lover of Android, JavaScript, Web. He can use his extensive experience dealing with large amounts of data in the enterprise to help you migrate, correct, and massage your data into any form you need. He has years of experience writing quality code that “just works” and is always up for an argument about how much better Android is than iOS.
 			</p>
 			
-			<h3>Sam</h3>
+			<h3><a href='http://sammussell.com'>Sam</a></h3>
 			<p>
 			 is a developer and designer with passions for iOS, JavaScript, and UI design. He has been designing web and mobile applications for years and is constantly trying to explore new technologies and improve his skills.
 			</p>
@@ -69,7 +69,6 @@
 	</footer>
 	
 	<script type="text/javascript">
-
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-16644501-7']);
 	  _gaq.push(['_trackPageview']);
@@ -79,7 +78,6 @@
 	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
-
 	</script>
 </body>
 </html>

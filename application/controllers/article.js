@@ -56,7 +56,7 @@ article.prototype.byAuthor_get = function(authorName){
 			}
 			self.writeResponse(data, 'index')
 		}
-	})
+	}, {'sort': [['publishDate', 'desc']]})
 }
 
 article.prototype.index_get = function(urlParts, query) {
